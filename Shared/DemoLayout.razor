@@ -1,0 +1,47 @@
+@inherits LayoutComponentBase
+
+    <div id="wrapper" class="@WrapperClass">
+        <div class="wrapper-holder">
+            <header id="header">
+                <a class="menu_trigger" href="#">menu</a>
+                <nav id="nav">
+                    <ul>
+                        <li><NavLink href="" Match="NavLinkMatch.All">Home</NavLink></li>
+                        <li><NavLink href="skills" Match="NavLinkMatch.All">My skills</NavLink></li>
+                        <li><NavLink href="portfolio" Match="NavLinkMatch.All">Portfolio</NavLink></li>
+                        <li><NavLink href="contact" Match="NavLinkMatch.All">Contact</NavLink></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="wrapper-holder grey">
+            <section id="main">
+
+                @ChildContent
+                @Body
+
+            </section>
+        </div>
+
+        <footer id="footer">
+            <div class="footer-content">
+                <ul class="social">
+                    <li class="email"><a href="#">Email</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="google"><a href="#">Google+</a></li>
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+                <p class="copy">Copyright 2014 John Markowitz. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+
+    @code {
+        [Parameter] public string WrapperClass { get; set; }
+        [Parameter] public RenderFragment ChildContent { get; set; }
+    }
+
+               
